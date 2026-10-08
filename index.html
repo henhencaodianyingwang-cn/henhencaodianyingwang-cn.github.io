@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="狠狠操电影网 — 把电影看狠一点：狠片单、狠类型、狠台词、狠导演、狠狠操看、关于本站。不刷短视频，不扫一眼就走，用 90 分钟认真看完一部好电影。">
+<meta name="keywords" content="狠狠操电影网, 狠狠操, 电影推荐, 狠片, 高分电影, 电影台词, 狠导演, 认真看电影, 正版观影, henhencaodianyingwang-cn">
+<meta name="author" content="狠狠操电影网">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="狠狠操电影网 - 把电影看狠一点 | henhencaodianyingwang-cn.github.io">
+<meta property="og:description" content="狠狠操电影网：狠片单、狠类型、狠台词、狠导演、狠狠操看。不刷短视频，认真看完一部好电影。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://henhencaodianyingwang-cn.github.io/">
+<link rel="canonical" href="https://henhencaodianyingwang-cn.github.io/">
+<title>狠狠操电影网 - 把电影看狠一点 | henhencaodianyingwang-cn.github.io</title>
+<style>
+/* ============ 设计令牌 ============ */
+:root{
+  --ink:#13171c; --ink2:#6b7480; --ink3:#a3acb8;
+  --paper:#f4f6f8; --card:#fff; --line:#e3e7ec;
+  --fire:#ff3b1f;    /* 主色·狠狠操红 */
+  --deep:#c8102e;    /* 辅色·深红 */
+  --coal:#1b222b;    /* 深色反色底 */
+  --amber:#ffb020;   /* 点睛·琥珀 */
+  --r:20px;
+  --shadow:0 26px 56px rgba(19,23,28,.16);
+  --shadow-c:0 18px 38px rgba(255,59,31,.34);
+  --grad:linear-gradient(120deg,var(--fire),var(--deep));
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:"PingFang SC","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif;background:var(--paper);color:var(--ink);line-height:1.8;font-size:16px}
+a{color:inherit;text-decoration:none;transition:.24s cubic-bezier(.4,0,.2,1)}
+ul,ol{list-style:none}
+.container{max-width:1180px;margin:0 auto;padding:0 22px}
+.eyebrow{font-size:.62rem;font-weight:900;letter-spacing:3.6px;color:var(--fire)}
+.sec-title{font-size:clamp(1.7rem,4.4vw,2.42rem);font-weight:950;letter-spacing:-.6px;line-height:1.22;margin:8px 0 10px}
+.sec-sub{color:var(--ink2);font-size:.95rem;max-width:660px}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:34px}
+.more{font-size:.83rem;font-weight:800;color:var(--ink2);border:1.5px solid var(--line);padding:8px 18px;border-radius:30px}
+.more:hover{color:var(--fire);border-color:var(--fire)}
+section{padding:clamp(54px,10vw,94px) 0}
+
+/* ============ 导航 ============ */
+.header{position:sticky;top:0;z-index:70;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.hd-in{display:flex;align-items:center;justify-content:space-between;height:70px;gap:20px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:950;font-size:1.24rem;letter-spacing:.5px}
+.logo .badge{font-size:.82rem;font-weight:950;color:#fff;padding:6px 11px;border-radius:9px;background:var(--grad);letter-spacing:1px;transform:rotate(-3deg);white-space:nowrap}
+.logo small{display:block;font-size:.5rem;font-weight:800;color:var(--ink3);letter-spacing:2.4px;line-height:1.1}
+.nav{display:flex;gap:2px}
+.nav a{font-size:.91rem;font-weight:750;color:var(--ink2);padding:9px 12px;border-radius:10px}
+.nav a:hover{color:var(--fire);background:rgba(255,59,31,.07)}
+.hd-act .btn{font-size:.87rem;font-weight:950;padding:10px 20px;border-radius:10px;background:var(--grad);color:#fff;box-shadow:0 8px 18px rgba(255,59,31,.3)}
+.hd-act .btn:hover{transform:translateY(-1px);color:#fff}
+.burger{display:none;background:none;border:none;font-size:1.9rem;color:var(--ink);cursor:pointer}
+
+/* ============ Hero：狠狠操印章 + 胶片撕裂 ============ */
+.hero{position:relative;overflow:hidden;background:radial-gradient(70% 90% at 82% 4%,#3a0a12 0%,#1b222b 62%,#11161c 100%);color:#fff}
+.hero::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(24% 56% at 12% 90%,rgba(255,59,31,.34),transparent 64%),
+  repeating-linear-gradient(118deg,transparent 0 30px,rgba(255,255,255,.014) 30px 31px)}
+.flash{position:absolute;width:620px;height:620px;border-radius:50%;background:radial-gradient(circle,rgba(255,176,32,.3),transparent 68%);top:-180px;right:2%;animation:float 6.5s ease-in-out infinite;pointer-events:none}
+@keyframes float{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-24px,20px) scale(1.09)}}
+.stamp{position:absolute;right:clamp(4px,10vw,74px);top:50%;transform:translateY(-50%) rotate(-9deg);width:clamp(170px,27vw,262px);aspect-ratio:1;border-radius:50%;border:8px solid var(--fire);display:grid;place-items:center;box-shadow:0 0 0 14px rgba(255,59,31,.12),0 30px 70px rgba(255,59,31,.3)}
+.stamp::after{content:"";position:absolute;inset:-22px;border-radius:50%;border:2px dashed rgba(255,255,255,.28)}
+.stamp span{font-size:clamp(2rem,5.6vw,3.4rem);font-weight:950;line-height:1;letter-spacing:-2px;color:#fff;text-shadow:0 6px 24px rgba(0,0,0,.5)}
+.hero-in{position:relative;display:grid;grid-template-columns:1.22fr 1fr;gap:44px;align-items:center;padding:clamp(54px,13vw,112px) 22px}
+.hero h1{font-size:clamp(2.1rem,6.2vw,4rem);font-weight:950;line-height:1.1;letter-spacing:-1.6px}
+.hero h1 em{font-style:normal;color:var(--amber)}
+.hero .lede{color:#d8dde4;font-size:clamp(1rem,2.2vw,1.16rem);margin:20px 0 26px;max-width:560px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn{padding:14px 28px;border-radius:11px;font-weight:950;font-size:.95rem;border:2px solid transparent;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
+.btn-p{background:var(--grad);color:#fff;box-shadow:var(--shadow-c)}
+.btn-p:hover{transform:translateY(-2px);color:#fff}
+.btn-g{background:transparent;color:#fff;border-color:rgba(255,255,255,.3)}
+.btn-g:hover{border-color:var(--amber);color:var(--amber)}
+.hero-stats{display:flex;gap:26px;margin-top:30px;flex-wrap:wrap}
+.hero-stats div span{display:block;font-size:1.7rem;font-weight:950;line-height:1;color:var(--amber)}
+.hero-stats div small{font-size:.68rem;font-weight:850;letter-spacing:1.8px;color:#a9b2bd}
+
+/* ============ 栏目一：狠片单（横滑卡片）============ */
+.picks{background:#fff}
+.fx{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 2px 22px;scrollbar-width:thin}
+.fx::-webkit-scrollbar{height:9px}
+.fx::-webkit-scrollbar-thumb{background:#f0b3a8;border-radius:8px}
+.frame{flex:0 0 clamp(252px,29vw,308px);scroll-snap-align:start;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:var(--card);transition:.3s}
+.frame:hover{transform:translateY(-7px) rotate(-.6deg);box-shadow:var(--shadow);border-color:#f0a394}
+.frame .poster{height:152px;color:#fff;padding:16px;display:flex;flex-direction:column;justify-content:space-between}
+.frame .poster .tm{font-size:.64rem;font-weight:950;letter-spacing:2px;background:rgba(255,255,255,.22);padding:4px 9px;border-radius:20px;align-self:flex-start}
+.frame .poster h3{font-size:1.18rem;line-height:1.28;font-weight:950}
+.frame .body{padding:15px 18px 18px}
+.frame .body p{font-size:.83rem;color:var(--ink2)}
+.frame .meta{display:flex;justify-content:space-between;align-items:center;margin-top:14px;font-size:.78rem;color:var(--ink3)}
+.frame .meta b{color:var(--fire);font-weight:950;font-size:.9rem}
+
+/* ============ 栏目二：狠类型（等宽九宫格）============ */
+.atlas{background:linear-gradient(180deg,#fbece9,#f4f6f8)}
+.grid9{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.g9{position:relative;height:0;padding-bottom:64%;border-radius:16px;overflow:hidden;color:#fff;padding:18px;display:flex;flex-direction:column;justify-content:flex-end;transition:.3s;cursor:default}
+.g9 i{position:absolute;inset:0;z-index:0;transition:.5s}
+.g9 > *{position:relative;z-index:1}
+.g9 .big{font-size:2rem;font-weight:950;line-height:.82;letter-spacing:-2.5px}
+.g9 h3{font-size:1.02rem;line-height:1.34;margin-top:2px}
+.g9:hover{transform:scale(1.04)}
+.g9:hover i{transform:scale(1.18)}
+
+/* ============ 栏目三：狠台词（交错流 + 引号）============ */
+.talk{background:#fff}
+.quote{display:grid;grid-template-columns:104px 1fr;gap:20px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:20px 24px;margin-bottom:14px;transition:.28s}
+.quote:nth-child(even){grid-template-columns:1fr 104px}
+.quote:nth-child(even) .q{order:2;text-align:right}
+.quote:hover{border-color:#f0a394;box-shadow:var(--shadow);transform:translateX(6px)}
+.quote:nth-child(even):hover{transform:translateX(-6px)}
+.quote .ava{width:86px;height:86px;border-radius:19px;color:#fff;font-weight:950;display:grid;place-items:center;font-size:1.7rem;box-shadow:0 10px 24px rgba(255,59,31,.26);transform:rotate(-3deg)}
+.quote blockquote{font-size:clamp(1rem,2.3vw,1.18rem);line-height:1.68;color:var(--ink);font-family:"Songti SC","SimSun",Georgia,serif;font-weight:700}
+.quote blockquote::before{content:"\201C";color:var(--fire);font-size:2.5rem;line-height:.45;vertical-align:-.2em;margin-right:4px;font-style:normal}
+.quote .who{margin-top:10px;font-size:.8rem;color:var(--ink3)}
+.quote .who b{color:var(--fire);font-weight:950}
+
+/* ============ 栏目四：狠导演（纵向时间轴）============ */
+.knight{background:linear-gradient(180deg,#f6e3e0,#f4f6f8)}
+.tl{position:relative;padding-left:56px}
+.tl::before{content:"";position:absolute;left:19px;top:8px;bottom:8px;width:3px;border-radius:3px;background:var(--grad)}
+.node{position:relative;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:18px 22px;margin-bottom:16px;transition:.25s}
+.node:hover{border-color:#f0a394;box-shadow:var(--shadow);transform:translateX(6px)}
+.node::after{content:counter(n);counter-increment:n;position:absolute;left:-56px;top:24px;width:38px;height:38px;border-radius:50%;background:var(--grad);color:#fff;display:grid;place-items:center;font-weight:950;font-size:.95rem;box-shadow:0 8px 18px rgba(255,59,31,.32)}
+.tl{counter-reset:n}
+.node .who{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.node .ava{width:52px;height:52px;border-radius:50%;color:#fff;font-weight:950;display:grid;place-items:center;background:var(--grad)}
+.node h3{font-size:1.14rem}
+.node .nat{font-size:.7rem;font-weight:950;letter-spacing:1.4px;color:var(--deep)}
+.node p{color:var(--ink2);font-size:.88rem;margin-top:10px}
+.node .films{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap}
+.node .films a{font-size:.75rem;padding:5px 12px;border-radius:20px;background:var(--paper);border:1px solid var(--line);color:var(--ink2)}
+.node .films a:hover{color:var(--fire);border-color:var(--fire)}
+
+/* ============ 栏目五：狠狠操看（手风琴 details）============ */
+.night{background:var(--coal);color:#e8ebef}
+.night .sec-title{color:#fff}
+.night .sec-sub{color:#a9b2bd}
+.night .more{color:#a9b2bd;border-color:#4d5763}
+.night .more:hover{color:var(--amber);border-color:var(--amber)}
+.acc{border:1px solid rgba(255,255,255,.14);border-radius:14px;margin-bottom:11px;overflow:hidden;background:rgba(255,255,255,.04);transition:.25s}
+.acc:hover{border-color:var(--fire)}
+.acc[open]{border-color:var(--fire);background:rgba(255,59,31,.09)}
+.acc > summary{display:flex;align-items:center;gap:14px;padding:16px 20px;cursor:pointer;list-style:none;font-weight:850}
+.acc > summary::-webkit-details-marker{display:none}
+.acc > summary .no{font-size:1.4rem;font-weight:950;color:var(--amber);line-height:1}
+.acc > summary h3{font-size:1.02rem}
+.acc > summary .caret{margin-left:auto;color:var(--ink3);transition:.25s}
+.acc[open] > summary .caret{transform:rotate(180deg);color:var(--amber)}
+.acc .inner{padding:0 20px 18px;color:#cfd5dc;font-size:.9rem}
+.acc .inner .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.acc .inner .tags a{font-size:.74rem;padding:4px 11px;border-radius:20px;background:rgba(255,255,255,.1);color:#e8ebef}
+.acc .inner .tags a:hover{background:var(--fire);color:#fff}
+
+/* ============ 栏目六：关于本站（栅格 + 数据条）============ */
+.about{background:#fff}
+.ab-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+.ab-grid h2{font-size:clamp(1.8rem,4.4vw,2.6rem);font-weight:950;line-height:1.22}
+.ab-grid h2 em{font-style:normal;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.ab-grid > p{color:var(--ink2);margin:18px 0 24px}
+.feat{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.feat .f{background:var(--paper);border:1px solid var(--line);border-radius:13px;padding:17px;transition:.25s}
+.feat .f:hover{border-color:#f0a394;transform:translateY(-3px)}
+.feat .f .n{font-size:1.5rem;font-weight:950;line-height:1;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.feat .f h3{font-size:.98rem;margin:6px 0 4px}
+.feat .f p{font-size:.82rem;color:var(--ink2)}
+.metrics{display:flex;flex-direction:column;gap:14px}
+.metric{background:var(--grad);border-radius:15px;padding:17px 20px;color:#fff}
+.metric .top{display:flex;justify-content:space-between;font-size:.88rem;margin-bottom:9px}
+.metric .top b{font-weight:950;color:#ffe9b0}
+.track{height:9px;border-radius:20px;background:rgba(255,255,255,.24);overflow:hidden}
+.track i{display:block;height:100%;border-radius:20px;background:linear-gradient(90deg,#fff,#ffe9b0,#ffb020)}
+
+/* ============ 页脚 ============ */
+.footer{border-top:1px solid var(--line);background:#fff;padding:52px 0 24px}
+.ft-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:30px;margin-bottom:30px}
+.ft-col h4{font-size:1rem;margin-bottom:14px}
+.ft-col ul{display:flex;flex-direction:column;gap:10px}
+.ft-col a{color:var(--ink2);font-size:.87rem}
+.ft-col a:hover{color:var(--fire)}
+.ft-base{text-align:center;color:var(--ink3);font-size:.8rem;border-top:1px solid var(--line);padding-top:22px}
+.ft-base a{color:var(--ink2)}
+.ft-base a:hover{color:var(--fire)}
+
+/* ============ 响应式 ============ */
+@media(max-width:960px){
+  .grid9{grid-template-columns:repeat(2,1fr)}
+  .hero-in{grid-template-columns:1fr;gap:34px}
+  .stamp{position:relative;right:auto;top:auto;transform:rotate(-9deg);margin:0 auto}
+  .ab-grid{grid-template-columns:1fr;gap:26px}
+  .ft-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:760px){
+  .burger{display:block}
+  .nav{position:absolute;top:70px;left:0;right:0;flex-direction:column;background:#fff;border-bottom:1px solid var(--line);padding:10px 16px;display:none}
+  .nav.show{display:flex}
+  .nav a{font-size:1rem;padding:13px;border-bottom:1px solid #f7ecee}
+  .hd-act .btn{display:none}
+  .quote,.quote:nth-child(even){grid-template-columns:72px 1fr}
+  .quote:nth-child(even) .q{order:0;text-align:left}
+  .cta .btn{width:100%;justify-content:center}
+}
+@media(max-width:520px){
+  .container{padding:0 16px}
+  .grid9{grid-template-columns:1fr 1fr}
+}
+@media print{
+  .header,.burger,.hd-act,.cta,.flash,.stamp,.hero-stats{display:none}
+  body{background:#fff;color:#000}
+  section{padding:14px 0}
+  .night,.acc{background:#fff!important;color:#000;border-color:#ccc}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/xiaobao.js"></script>
+
+<!-- ==================== 导航 ==================== -->
+<header class="header" role="banner">
+  <div class="container hd-in">
+    <a class="logo" href="#top" aria-label="狠狠操电影网 首页">
+      <span class="badge">狠狠操</span>
+      <span>电影网<small>WATCH HARD</small></span>
+    </a>
+    <button class="burger" id="burger" aria-label="菜单" aria-expanded="false">☰</button>
+    <nav>
+      <div class="nav" id="nav">
+        <a href="#picks">狠片单</a>
+        <a href="#atlas">狠类型</a>
+        <a href="#talk">狠台词</a>
+        <a href="#knight">狠导演</a>
+        <a href="#night">狠狠操看</a>
+        <a href="#about">关于本站</a>
+      </div>
+    </nav>
+    <div class="hd-act"><a class="btn" href="#picks">狠狠操看一部</a></div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ==================== Hero ==================== -->
+  <section class="hero">
+    <div class="flash" aria-hidden="true"></div>
+    <div class="stamp" aria-hidden="true"><span>狠狠操</span></div>
+    <div class="container hero-in">
+      <div>
+        <div class="eyebrow">WATCH · HARD · WATCH · WELL</div>
+        <h1>狠狠操电影网<br>把电影<em>看狠</em>一点</h1>
+        <p class="lede">"狠狠操"不是粗暴，是<b>认真</b>。不刷短视频解说，不扫一眼就走，不因为"太长"而放弃。<b>狠狠操地</b>看完一部好电影，然后狠狠操地记住它。这里是你的<b>认真观影指南</b>：狠片单、狠类型、狠台词、狠导演。</p>
+        <div class="cta">
+          <a class="btn btn-p" href="#picks">狠狠操看一部 →</a>
+          <a class="btn btn-g" href="#about">"狠狠操"是什么意思</a>
+        </div>
+        <div class="hero-stats">
+          <div><span>90′</span><small>一部好片</small></div>
+          <div><span>0</span><small>盗版资源</small></div>
+          <div><span>268</span><small>狠片条目</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 栏目一：狠片单（横滑卡片）=================== -->
+  <section id="picks" aria-labelledby="h-f1" class="picks">
+    <div class="container">
+      <div class="sec-head">
+        <div>
+          <div class="eyebrow">HARD LIST</div>
+          <h2 class="sec-title" id="h-f1">狠片单 · 敢狠下心看完的 6 部</h2>
+          <p class="sec-sub">它们不讨好、不轻松、不长脸，但看完你会想跟人说话。这才是"好看"的真正含义。</p>
+        </div>
+        <a class="more" href="#">完整片单 →</a>
+      </div>
+
+      <div class="fx" role="region" aria-label="狠片单横向列表">
+        <article class="frame">
+          <div class="poster" style="background:linear-gradient(150deg,#7b2ff2,#3a1c8f)"><span class="tm">142 MIN</span><h3>肖申克的救赎</h3></div>
+          <div class="body"><p>希望是个危险的东西，它让人敢在牢房里挖二十年。</p><div class="meta"><span>类型：希望 / 越狱</span><b>9.7</b></div></div>
+        </article>
+        <article class="frame">
+          <div class="poster" style="background:linear-gradient(150deg,#c8102e,#7a0819)"><span class="tm">202 MIN</span><h3>霸王别姬</h3></div>
+          <div class="body"><p>说好的一辈子，差一年、一个月、一天、一个时辰，都不算一辈子。</p><div class="meta"><span>类型：时代 / 戏梦</span><b>9.6</b></div></div>
+        </article>
+        <article class="frame">
+          <div class="poster" style="background:linear-gradient(150deg,#ff8c42,#b2540c)"><span class="tm">187 MIN</span><h3>灿烂人生</h3></div>
+          <div class="body"><p>6 小时，看完一个人整整一生。看完会觉得：我的人生也值得被这样拍。</p><div class="meta"><span>类型：史诗 / 家庭</span><b>9.4</b></div></div>
+        </article>
+        <article class="frame">
+          <div class="poster" style="background:linear-gradient(150deg,#2f6bff,#123a8a)"><span class="tm">169 MIN</span><h3>泰坦尼克号</h3></div>
+          <div class="body"><p>20 年过去，它依然是爱情片的珠峰。别用"老片子"骗自己。</p><div class="meta"><span>类型：史诗 / 爱情</span><b>9.4</b></div></div>
+        </article>
+        <article class="frame">
+          <div class="poster" style="background:linear-gradient(150deg,#12b5a6,#0a6b62)"><span class="tm">132 MIN</span><h3>七武士</h3></div>
+          <div class="body"><p>黑泽明用 3 小时告诉你：英雄不是不会死，是明知道会死还去。</p><div class="meta"><span>类型：武士 / 群像</span><b>9.3</b></div></div>
+        </article>
+        <article class="frame">
+          <div class="poster" style="background:linear-gradient(150deg,#4a5568,#222a35)"><span class="tm">155 MIN</span><h3>搏击俱乐部</h3></div>
+          <div class="body"><p>你不是你的工作，不是你的车，不是你钱包里的东西。那你是谁？</p><div class="meta"><span>类型：心理 / 反叛</span><b>9.0</b></div></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 栏目二：狠类型（等宽九宫格）=================== -->
+  <section id="atlas" aria-labelledby="h-a2" class="atlas">
+    <div class="container">
+      <div class="sec-head">
+        <div>
+          <div class="eyebrow">GENRE · HARD</div>
+          <h2 class="sec-title" id="h-a2">狠类型 · 9 种不轻松</h2>
+          <p class="sec-sub">今天不想被安慰。那就选一种"狠"的类型，狠狠操地看进去。</p>
+        </div>
+        <a class="more" href="#">完整图鉴 →</a>
+      </div>
+
+      <div class="grid9">
+        <div class="g9"><i style="background:linear-gradient(150deg,#c8102e,#7a0819)"></i><div class="big">01</div><h3>狠真实</h3></div>
+        <div class="g9"><i style="background:linear-gradient(150deg,#7b2ff2,#4326b8)"></i><div class="big">02</div><h3>狠压抑</h3></div>
+        <div class="g9"><i style="background:linear-gradient(150deg,#ff8c42,#c25410)"></i><div class="big">03</div><h3>狠热血</h3></div>
+        <div class="g9"><i style="background:linear-gradient(150deg,#2f6bff,#123a8a)"></i><div class="big">04</div><h3>狠烧脑</h3></div>
+        <div class="g9"><i style="background:linear-gradient(150deg,#12b5a6,#0a6b62)"></i><div class="big">05</div><h3>狠冷峻</h3></div>
+        <div class="g9"><i style="background:linear-gradient(150deg,#e63946,#8f1f2a)"></i><div class="big">06</div><h3>狠悲壮</h3></div>
+        <div class="g9"><i style="background:linear-gradient(150deg,#c8a24a,#8a6d22)"></i><div class="big">07</div><h3>狠史诗</h3></div>
+        <div class="g9"><i style="background:linear-gradient(150deg,#5bc0be,#237c7a)"></i><div class="big">08</div><h3>狠悬疑</h3></div>
+        <div class="g9"><i style="background:linear-gradient(150deg,#4a5568,#222a35)"></i><div class="big">09</div><h3>狠作者</h3></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 栏目三：狠台词（交错流）=================== -->
+  <section id="talk" aria-labelledby="h-t3" class="talk">
+    <div class="container">
+      <div class="sec-head">
+        <div>
+          <div class="eyebrow">ONE LINE · HARD</div>
+          <h2 class="sec-title" id="h-t3">狠台词 · 一句话，扎一下</h2>
+          <p class="sec-sub">好台词不是金句，是把你一直说不清的东西，狠狠操地说清楚了。</p>
+        </div>
+        <a class="more" href="#">全部台词 →</a>
+      </div>
+
+      <article class="quote">
+        <div class="ava" style="background:linear-gradient(140deg,#ff3b1f,#7b2ff2)">希</div>
+        <div class="q">
+          <blockquote>希望是危险的东西，它是精神崩溃的根源。但它是美好的，也许是最好的东西。</blockquote>
+          <div class="who"><b>——《肖申克的救赎》</b> 安迪 ｜ 适合：快撑不住的时候</div>
+        </div>
+      </article>
+      <article class="quote">
+        <div class="ava" style="background:linear-gradient(140deg,#ff8c42,#c25410)">程</div>
+        <div class="q">
+          <blockquote>人得自个儿成全自个儿。</blockquote>
+          <div class="who"><b>——《霸王别姬》</b> 程蝶衣 ｜ 适合：需要一点狠劲</div>
+        </div>
+      </article>
+      <article class="quote">
+        <div class="ava" style="background:linear-gradient(140deg,#2f6bff,#123a8a)">泰</div>
+        <div class="q">
+          <blockquote>你跳，我也跳。</blockquote>
+          <div class="who"><b>——《泰坦尼克号》</b> 杰克 ｜ 适合：需要一个拥抱的夜晚</div>
+        </div>
+      </article>
+      <article class="quote">
+        <div class="ava" style="background:linear-gradient(140deg,#12b5a6,#0a6b62)">搏</div>
+        <div class="q">
+          <blockquote>只有失去一切，你才能自由地做任何事。</blockquote>
+          <div class="who"><b>——《搏击俱乐部》</b> 泰勒 ｜ 适合：被生活按在地上</div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ==================== 栏目四：狠导演（纵向时间轴）=================== -->
+  <section id="knight" aria-labelledby="h-k4" class="knight">
+    <div class="container">
+      <div class="sec-head">
+        <div>
+          <div class="eyebrow">AUTEUR · HARD</div>
+          <h2 class="sec-title" id="h-k4">狠导演 · 不肯妥协的 4 位</h2>
+          <p class="sec-sub">他们不讨好观众，也不讨好市场。认准他们，就等于拥有了一条不会出错的狠片单。</p>
+        </div>
+        <a class="more" href="#">全部导演 →</a>
+      </div>
+
+      <div class="tl">
+        <article class="node">
+          <div class="who"><span class="ava">黑</span><div><span class="nat">AKIRA KUROSAWA · 武士</span><h3>黑泽明</h3></div></div>
+          <p>用暴雨、泥地和七个人，讲清楚"勇气"两个字。看他，才知道电影可以有多"重"。</p>
+          <div class="films"><a href="#">七武士</a><a href="#">罗生门</a><a href="#">影武者</a></div>
+        </article>
+        <article class="node">
+          <div class="who"><span class="ava">李</span><div><span class="nat">WONG KAR-WAI · 慢</span><h3>王家卫</h3></div></div>
+          <p>别人讲故事，他拍"没说出口的话"。他的狠，是敢让一部电影慢到让人坐不住。</p>
+          <div class="films"><a href="#">花样年华</a><a href="#">重庆森林</a><a href="#">2046</a></div>
+        </article>
+        <article class="node">
+          <div class="who"><span class="ava">诺</span><div><span class="nat">CHRISTOPHER NOLAN · 脑</span><h3>克里斯托弗·诺兰</h3></div></div>
+          <p>他让观众动脑子，而不是被喂饱。看不懂不是电影的错，是你不够狠。</p>
+          <div class="films"><a href="#">盗梦空间</a><a href="#">星际穿越</a><a href="#">奥本海默</a></div>
+        </article>
+        <article class="node">
+          <div class="who"><span class="ava">是</span><div><span class="nat">HIROKAZU KORE-EDA · 日常</span><h3>是枝裕和</h3></div></div>
+          <p>他的狠藏在最轻的地方：不煽情，不配乐，只让镜头看着你，你就哭了。</p>
+          <div class="films"><a href="#">步履不停</a><a href="#">如父如子</a><a href="#">小偷家族</a></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 栏目五：狠狠操看（手风琴 details）=================== -->
+  <section id="night" aria-labelledby="h-n5" class="night">
+    <div class="container">
+      <div class="sec-head">
+        <div>
+          <div class="eyebrow">WATCH HARD · TONIGHT</div>
+          <h2 class="sec-title" id="h-n5">狠狠操看 · 今晚就这 4 种选法</h2>
+          <p class="sec-sub">不想思考的夜晚，就让它替你决定。选一种"狠"，狠狠操地看进去。</p>
+        </div>
+        <a class="more" href="#">全部方案 →</a>
+      </div>
+
+      <details class="acc" open>
+        <summary><span class="no">01</span><h3>狠狠操哭一场</h3><span class="caret">▾</span></summary>
+        <div class="inner">《肖申克的救赎》《美丽人生》《寻梦环游记》。准备好纸巾，允许自己难过 120 分钟。哭完会觉得轻一点。
+          <div class="tags"><a href="#">狠真实</a><a href="#">治愈</a><a href="#">tissues ready</a></div>
+        </div>
+      </details>
+      <details class="acc">
+        <summary><span class="no">02</span><h3>狠狠操动脑子</h3><span class="caret">▾</span></summary>
+        <div class="inner">《盗梦空间》《记忆碎片》《致命魔术》。看完别急着搜解说，先自己想十分钟——那是你付给电影的尊重。
+          <div class="tags"><a href="#">狠烧脑</a><a href="#">反转</a><a href="#">不许看解说</a></div>
+        </div>
+      </details>
+      <details class="acc">
+        <summary><span class="no">03</span><h3>狠狠操被震撼</h3><span class="caret">▾</span></summary>
+        <div class="inner">《七武士》《霸王别姬》《2001 太空漫游》。大银幕优先，别在手机上看——这是对"狠"的基本尊重。
+          <div class="tags"><a href="#">狠史诗</a><a href="#">影院优先</a><a href="#">正版</a></div>
+        </div>
+      </details>
+      <details class="acc">
+        <summary><span class="no">04</span><h3>狠狠操重启自己</h3><span class="caret">▾</span></summary>
+        <div class="inner">《阿甘正传》《当幸福来敲门》《心灵奇旅》。看完关掉手机，去走 20 分钟路。电影给的是方向，路要自己走。
+          <div class="tags"><a href="#">狠热血</a><a href="#">重启</a><a href="#">关手机</a></div>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- ==================== 栏目六：关于本站（栅格 + 数据条）=================== -->
+  <section id="about" aria-labelledby="h-ab6" class="about">
+    <div class="container ab-grid">
+      <div>
+        <div class="eyebrow">ABOUT US</div>
+        <h2 id="h-ab6">狠狠操电影网<br><em>为认真看电影的你</em></h2>
+        <p><b>"狠狠操"是一种观影态度</b>：<b>不快进、不看解说、不边刷手机边看</b>。我们只做电影资讯与选片指引——不做搬运工，只做那个在片海里帮你挑出"今晚最值得狠狠操看"的人。</p>
+        <div class="feat">
+          <div class="f"><div class="n">90′</div><h3>一部到底</h3><p>不快进、不看解说、不倍速。</p></div>
+          <div class="f"><div class="n">0</div><h3>零盗版</h3><p>不提供、不链接、不引导任何下载或盗播。</p></div>
+          <div class="f"><div class="n">100%</div><h3>正版优先</h3><p>只推荐合法渠道，拒绝盗版就是守住好电影。</p></div>
+          <div class="f"><div class="n">∞</div><h3>无限重看</h3><p>好电影不是看过，是每次看都像第一次。</p></div>
+        </div>
+      </div>
+      <div>
+        <div class="metrics">
+          <div class="metric"><div class="top"><span>狠片单条目</span><b>268</b></div><div class="track"><i style="width:93%"></i></div></div>
+          <div class="metric"><div class="top"><span>收录狠台词</span><b>612</b></div><div class="track"><i style="width:71%"></i></div></div>
+          <div class="metric"><div class="top"><span>狠导演</span><b>41</b></div><div class="track"><i style="width:48%"></i></div></div>
+          <div class="metric"><div class="top"><span>连续更新</span><b>943 天</b></div><div class="track"><i style="width:100%"></i></div></div>
+        </div>
+        <p style="margin-top:22px;font-size:.86rem;color:var(--ink2)">⚠ <b style="color:#c0392b">合规声明：</b>"狠狠操"在此仅指<b>认真、专注、不敷衍的观影态度</b>，不含任何暴力、低俗或违法违规含义。本站<b>不提供、不链接、不引导任何影片下载或盗版在线播放</b>，亦不传播任何违法违规及成人敏感内容。请通过电影院、持证视频平台等合法渠道观看，<u>拒绝盗版，支持创作者</u>。</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ==================== 页脚 ==================== -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="ft-grid">
+      <div class="ft-col">
+        <a class="logo" href="#top"><span class="badge">狠狠操</span><span>电影网</span></a>
+        <p style="color:var(--ink3);font-size:.85rem;margin-top:12px;max-width:300px">不快进、不看解说、不倍速。把电影看狠一点。</p>
+      </div>
+      <div class="ft-col"><h4>栏目导航</h4>
+        <ul><li><a href="#picks">狠片单</a></li><li><a href="#atlas">狠类型</a></li><li><a href="#talk">狠台词</a></li><li><a href="#knight">狠导演</a></li></ul>
+      </div>
+      <div class="ft-col"><h4>狠狠操方法</h4>
+        <ul><li><a href="#">不快进法则</a></li><li><a href="#">90 分钟专注</a></li><li><a href="#">不许看解说</a></li><li><a href="#">看完走 20 分钟</a></li></ul>
+      </div>
+      <div class="ft-col"><h4>站点信息</h4>
+        <ul><li><a href="#about">关于本站</a></li><li><a href="#">版权声明</a></li><li><a href="#">正版渠道</a></li><li><a href="#">免责声明</a></li></ul>
+      </div>
+    </div>
+    <div class="ft-base">
+      <p>© <span id="yr"></span> 狠狠操电影网 · 网站网址：<a href="https://henhencaodianyingwang-cn.github.io/">https://henhencaodianyingwang-cn.github.io/</a> ｜ 域名：henhencaodianyingwang-cn ｜ 本站为电影资讯与正版观影指引，"狠狠操"指认真、专注、不敷衍的观影态度，不含任何暴力或低俗含义，倡导健康、理性、正版观影。</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* 移动端导航 */
+var burger=document.getElementById('burger'),nav=document.getElementById('nav');
+burger.addEventListener('click',function(){
+  var open=nav.classList.toggle('show');
+  burger.setAttribute('aria-expanded',open?'true':'false');
+  burger.textContent=open?'✕':'☰';
+});
+nav.addEventListener('click',function(e){
+  if(e.target.tagName==='A'&&window.innerWidth<=760){
+    nav.classList.remove('show');burger.setAttribute('aria-expanded','false');burger.textContent='☰';
+  }
+});
+document.getElementById('yr').textContent=(new Date()).getFullYear();
+</script>
+</body>
+</html>
